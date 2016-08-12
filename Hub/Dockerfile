@@ -1,4 +1,4 @@
-FROM portnumber53/pi-selenium-grid-base
+FROM portnumber53/rpi-selenium-grid-base
 MAINTAINER grimlock <grimlock@portnumber53.com>
 
 
