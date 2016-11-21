@@ -3,5 +3,5 @@ This repo mimics https://github.com/SeleniumHQ/docker-selenium for a Raspberry P
 
 
 P.S.
-I like ArchLinux, so I'm basing this containers from a Arm ArchLinux.... base
+I like ArchLinux, so I'l be basing these containers from a Arm ArchLinux.... base someday
 
