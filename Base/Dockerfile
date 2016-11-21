@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Grimlock <grimlock@portnumber53.com>
+MAINTAINER Me Grimlock <grimlock@portnumber53.com>
 
 #RUN pacman -Syyu --noconfirm
 
