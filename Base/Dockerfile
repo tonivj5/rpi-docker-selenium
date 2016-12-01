@@ -1,4 +1,5 @@
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
+FROM ioft/armhf-ubuntu:16.04
 MAINTAINER Me Grimlock <grimlock@portnumber53.com>
 
 #RUN pacman -Syyu --noconfirm
@@ -13,13 +14,13 @@ RUN apt-get update -qqy \
     wget sudo \
     bzip2 \
     ca-certificates \
-    openjdk-7-jre \
+    openjdk-8-jre \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
 # Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-armhf
-#ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk/
+#ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-armhf
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk/
 
 #==========
 # Selenium
@@ -32,7 +33,7 @@ RUN mkdir -p /opt/selenium \
 # Add normal user with passwordless sudo
 #========================================
 RUN sudo useradd seluser --shell /bin/bash --create-home \
-  && sudo usermod -a -G wheel seluser \
+#  && sudo usermod -a -G wheel seluser \
   && echo 'ALL ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers \
   && echo 'seluser:secret' | chpasswd
 

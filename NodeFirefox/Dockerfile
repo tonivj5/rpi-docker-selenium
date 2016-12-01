@@ -1,4 +1,4 @@
-FROM portnumber53/rpi-selenium-node-base
+FROM qontu/rpi-selenium-node-base
 MAINTAINER  grimlock <grimlock@portnumber53.com>
 
 USER root
@@ -6,9 +6,10 @@ USER root
 #=========
 # Firefox
 #=========
-#ENV FIREFOX_VERSION 45.0.2
-#RUN apt-get update -qqy \
+ENV FIREFOX_VERSION 45.0.2
+RUN apt-get update -qqy \
 #  && apt-get -qqy --no-install-recommends install firefox-esr
+  && apt-get -qqy --no-install-recommends install firefox
 #  && rm -rf /var/lib/apt/lists/* \
 #  && wget --no-verbose -O /tmp/firefox.tar.bz2 https://download-installer.cdn.mozilla.net/pub/firefox/releases/$FIREFOX_VERSION/linux-x86_64/en-US/firefox-$FIREFOX_VERSION.tar.bz2 \
 #  && apt-get -y purge firefox \
@@ -18,7 +19,7 @@ USER root
 #  && mv /opt/firefox /opt/firefox-$FIREFOX_VERSION \
 #  && ln -fs /opt/firefox-$FIREFOX_VERSION/firefox /usr/bin/firefox
 
-RUN pacman -Syy --noconfirm firefox
+#RUN pacman -Syy --noconfirm firefox
 
 #========================
 # Selenium Configuration
